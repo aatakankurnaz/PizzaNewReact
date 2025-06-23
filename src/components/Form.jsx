@@ -13,7 +13,7 @@ export default function Form() {
     
 
     return (
-        <Wrapper>
+        <Wrapper className="mx-10">
             <HeaderComponent />
             <MainComponent price={price} pizzaName={pizzaName}/>
             

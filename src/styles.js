@@ -83,10 +83,20 @@ display: flex;
 flex-direction: column;
 `
 export const FormUstP = styled.p`
-color: white;
-font-family: 'Barlow', sans-serif;
-transform: translateX(-160px);
-`
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  word-wrap: break-word;      /* Uzun kelimelerde satır kır */
+  overflow-wrap: break-word;  /* alternatif */
+  white-space: normal;        /* Satır taşmasını önler */
+  margin: 0;                  /* Gereksiz margin varsa sıfırla */
+  padding: 0;                 /* Gereksiz padding varsa sıfırla */
+  
+  @media (max-width: 640px) {
+    font-size: 14px;          /* Mobilde yazı büyüklüğünü küçült */
+    width: 100%;              /* Genişliği containera göre ayarla */
+  }
+`;
+
 export const FormAnaDiv = styled.div`
 font-family: 'Barlow', sans-serif;
 `
@@ -148,10 +158,19 @@ export const Options2 = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  row-gap:20px;
+  row-gap: 20px;
   max-height: 200px;
   padding-top: 40px;
+
+  @media (max-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    max-height: none;
+    padding-top: 20px;
+  }
 `;
+
 
 export const Not = styled.div`
 padding-top: 40px;
