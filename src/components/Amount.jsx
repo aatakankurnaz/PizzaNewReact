@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { SiparisVer, Sonuc, SonucBaslik, Tutar } from "../styles";
 import AmountDetail from "./AmountDetail";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Amount(props) {
+    const navigate = useNavigate();
 
     const { price, selectedIngredientsState, pizzaNumber, CheckedSize, errorIngredientsState, pizzaName, selectedThickness, NameSurnameState } = props;
 
@@ -62,21 +65,28 @@ export default function Amount(props) {
         }));
     }, [selectedIngredientsState, CheckedSize, NameSurnameState, price, pizzaNumber]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
   e.preventDefault();
 
-  axios.post(
-    "https://reqres.in/api/pizza",
-    fullData,
-    {
-      headers: {
-        "x-api-key": "reqres-free-v1"
+  try {
+    const response = await axios.post(
+      "https://reqres.in/api/pizza",
+      fullData,
+      {
+        headers: { "x-api-key": "reqres-free-v1" }
       }
-    }
-  )
-  .then(r => console.log(r))
-  .catch(e => console.log(e));
+    );
+
+    console.log(response);
+
+    // Başarılıysa diğer sayfaya yönlendir ve fullData’yı state olarak gönder
+    navigate("/siparis-sonucu", { state: fullData });
+
+  } catch (error) {
+    console.log(error);
+  }
 }
+
     
    const selectedTotalAmount = selectedTotalAmountCalc()
     const finalTotalAmount = Number(price) * pizzaNumber + Number(selectedTotalAmount || 0)

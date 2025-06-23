@@ -15,7 +15,7 @@ export default function Menus() {
           <p className="font-semibold text-lg text-white font-barlow">
             Position:Absolute Acı Burger
           </p>
-          <button className="font-barlow font-semibold text-sm border-inherit p-3 rounded-[50px] mt-6 bg-white max-w-1/3 text-red-600">
+          <button className="font-barlow font-semibold text-sm border-inherit p-1 lg:p-3 rounded-[50px] mt-6 bg-white max-w-1/3 text-red-600">
             SİPARİŞ VER
           </button>
         </div>
@@ -29,7 +29,7 @@ export default function Menus() {
             <p className="text-white font-barlow font-semibold text-2xl lg:text-3xl">
               Hackathlon <br /> Burger Menü
             </p>
-            <button className="font-barlow font-semibold text-xs border-inherit p-3 px-4 lg:px-7 rounded-[50px] mt-3 lg:mt-6 bg-white max-w-1/3 text-red-600">
+            <button className="font-barlow font-semibold text-xs border-inherit p-1 lg:p-3 px-3 lg:px-7 rounded-[50px] mt-3 lg:mt-6 bg-white max-w-1/3 text-red-600">
               SİPARİŞ VER
             </button>
           </div>
@@ -42,7 +42,7 @@ export default function Menus() {
               <span className="text-red-500">Çoooook</span> hızlı <br />
               npm gibi kurye
             </p>
-            <button className="font-barlow font-semibold text-xs border-inherit p-3 px-2 lg:px-7 rounded-[50px] mt-3 lg:mt-6 bg-white max-w-1/3 text-red-600">
+            <button className="font-barlow font-semibold text-xs border-inherit p-1 lg:p-3 px-2 lg:px-7 rounded-[50px] mt-3 lg:mt-6 bg-white max-w-1/3 text-red-600">
               SİPARİŞ VER
             </button>
           </div>
